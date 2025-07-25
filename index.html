@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KJC Referral + Auto-Staking</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>KJC Referral + Auto-Staking</h1>
+    <p id="status">❌ Wallet not connected</p>
+    <button id="connectWallet">🔌 เชื่อมต่อกระเป๋าเงิน</button>
+
+    <hr/>
+
+    <h2>👬 การแนะนำ (Referral)</h2>
+    <input type="text" id="refInput" placeholder="ที่อยู่ผู้แนะนำ" />
+    <button id="registerReferrer">📌 ลงทะเบียนผู้แนะนำ</button>
+
+    <h2>🔗 ลิงก์แนะนำของคุณ</h2>
+    <input type="text" id="referralLink" readonly />
+    <button id="copyLink">📋 คัดลอกลิงก์</button>
+
+    <hr/>
+
+    <h2>💸 ซื้อ KJC ด้วย USDT</h2>
+    <input type="number" id="purchaseAmount" placeholder="จำนวน USDT" min="10" step="0.01" />
+    <button id="purchase">🛒 ซื้อและล็อกเหรียญอัตโนมัติ</button>
+
+    <h2>🎁 รางวัลจากการแนะนำ</h2>
+    <button id="claimReferralReward">💰 เคลมรางวัลแนะนำ</button>
+
+    <hr/>
+
+    <h2>🔐 รายการการล็อกเหรียญของคุณ</h2>
+    <ul id="stakeList"></ul>
+  </div>
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+
+  <!-- Config & ABI -->
+  <script src="config.js"></script>
+  <script src="abi.js"></script>
+  <script src="erc20Abi.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
